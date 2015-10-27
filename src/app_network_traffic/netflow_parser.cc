@@ -808,8 +808,8 @@ bool ParseConnections(char* line, NetflowRecord& record)
         cout << "num_tokens = " << num_tokens << endl;
         return false;
     }
-    char* dummy;
-    record.timestamp = strtol(tokens[4], &dummy, 10);
+    //char* dummy;
+    //record.timestamp = strtol(tokens[4], &dummy, 10);
     
     strcpy(record.src_ip, tokens[0]);
     strcpy(record.dst_ip, tokens[1]);

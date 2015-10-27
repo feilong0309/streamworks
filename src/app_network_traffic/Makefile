@@ -5,18 +5,18 @@ CXX=g++
 OPTFLAGS=-O3
 #CFLAGS=-DEXPORT_MAPVIEW
 
-CFLAGS=-DTIMING -DVF2i -std=c++0x
+#CFLAGS=-DTIMING -DVF2i -std=c++0x
 #TARGET=run_test_vf2.x
 
 #CFLAGS=-DTIMING -DTRY_LAZY_SEARCH
-TARGET=run_test_lazy.x
+#TARGET=run_test_lazy.x
 
-#CFLAGS=-DTIMING
-#TARGET=run_test_all.x
+CFLAGS=-DTIMING -std=c++0x
+TARGET=run_test_all.x
 
 IFLAGS=-I../../include -I../commons/ -I../../deps/boost
-LFLAGS=-L../../deps/boost_libs/lib -lboost_regex -L../../lib -ldyngraph -ldyngraph_search -lcommons -lquery_opt -lquery_filter
-#LFLAGS=-L../../deps/boost_libs/lib -lboost_regex -L../../lib -ldyngraph -ldyngraph_search -lcommons -lquery_opt #-lquery_filter
+#LFLAGS=-L../../deps/boost_libs/lib -lboost_regex -L../../lib -ldyngraph -ldyngraph_search -lcommons -lquery_opt -lquery_filter
+LFLAGS=-L../../deps/boost_libs/lib -lboost_regex -L../../lib -ldyngraph -ldyngraph_search -lcommons -lquery_opt #-lquery_filter
 
 #TARGET=run_gephi.x
 #TARGET=compile_query.x

@@ -539,7 +539,7 @@ int main(int argc, char* argv[])
     return 0;
 }
 */
-/*
+
 bool Label::FilterVertex(int u, int u_deg, const Label& lbl) const
 {
     return true;
@@ -549,7 +549,7 @@ bool NetflowAttbs::FilterEdge(int e_id) const
 {
     return true;
 }
-*/
+
 
 int main(int argc, char* argv[])
 {
