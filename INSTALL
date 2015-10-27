@@ -1,0 +1,56 @@
+##READ ME
+
+#################################INITIAL SETUP################################ 
+
+1)Go to the home directory and create following directories
+cd $GRAPH_HOME
+mkdir lib
+mkdir include
+mkdir deps
+ 
+2) Setup Boost
+tar -xvzf boost_1_51_0.tar.gz
+mv boost_1_51_0 deps/
+
+cd deps
+ln -s boost_1_51_0 boost
+cd boost
+./bootstrap.sh --prefix=`pwd`
+./b2
+cd ..
+ln -s boost_1_51_0/stage/ boost_libs
+
+##################################TO BUILD####################################
+cd ../src/
+./build
+
+
+
+##################################KNOWN PROBLEMS################################
+Notes: Depending on compiler version, you may encounter problems in compiling couter.h
+
+1) Multiple definitions of <unordered_map> -> one available from gcc, another from boost
+1.Solution): If you have ambiguous refrences to "unordered_map", go to src/common/counter.hpp
+Keep either gcc or boost version of unordered_map i.e. open src/commons/counter.hpp,
+  a)Comment out gcc, like this : 
+	//include <unordered_map>
+  b)then uncomment boost like this:
+        include <boost/unordered_map>
+        using namespace boost
+  c)build common again!
+        cd src/commons/
+        make
+
+
+2) No definition of <vector> -> vector.h is not available from gcc or boost by default
+2.Solution) Add header file for gcc "vector", i.e. open src/commons/counter.hpp
+ a)add a line for :
+	#include <vector>
+ b)build commons again!
+ 	cd src/commons
+   	make
+
+
+
+            
+
