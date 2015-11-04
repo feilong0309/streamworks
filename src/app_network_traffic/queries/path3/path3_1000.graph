@@ -1,0 +1,7 @@
+v 0 ip
+v 1 ip
+v 2 ip
+v 3 ip
+e 0 1 ESP
+e 1 2 ESP
+e 2 3 ESP
